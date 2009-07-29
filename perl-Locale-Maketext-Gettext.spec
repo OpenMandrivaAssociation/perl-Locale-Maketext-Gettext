@@ -1,17 +1,18 @@
-%define module   Locale-Maketext-Gettext
-%define version    1.28
-%define release    %mkrel 1
+%define upstream_name    Locale-Maketext-Gettext
+%define upstream_version 1.28
 
-Name:       perl-%{module}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
-Group:      Development/Perl
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:    Joins the gettext and Maketext frameworks
-Url:        http://search.cpan.org/dist/%{module}
-Source:     http://www.cpan.org/modules/by-module/Locale/%{module}-%{version}.tar.gz
-BuildArch: noarch
-BuildRoot:  %{_tmppath}/%{name}-%{version}
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Locale/%{upstream_name}-%{upstream_version}.tar.gz
+
+BuildArch:  noarch
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 
@@ -30,7 +31,7 @@ Then, build your Maketext localization class, with your base class changed
 from Locale::Maketext/3 to Locale::Maketext::Gettext. That is all.
 
 %prep
-%setup -q -n %{module}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -53,4 +54,3 @@ rm -rf %{buildroot}
 %{_mandir}/man3/*
 %{_mandir}/man1/maketext.1.lzma
 %{perl_vendorlib}/Locale
-
