@@ -3,14 +3,13 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	2
-
+Release:	4
 Summary:	Joins the gettext and Maketext frameworks
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Locale/%{upstream_name}-%{upstream_version}.tar.gz
-
+BuildRequires:	perl(Digest::SHA)
 BuildRequires:	perl-devel
 BuildArch:	noarch
 
@@ -31,6 +30,7 @@ from Locale::Maketext/3 to Locale::Maketext::Gettext. That is all.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version}
+rm t/00-signature.t
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -49,27 +49,3 @@ make test
 %{_mandir}/man1/maketext.1.*
 %{perl_vendorlib}/Locale
 
-%changelog
-* Wed Jul 29 2009 Jérôme Quelin <jquelin@mandriva.org> 1.280.0-1mdv2010.0
-+ Revision: 403395
-- rebuild using %%perl_convert_version
-
-* Sun Jun 28 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.28-1mdv2010.0
-+ Revision: 390361
-- update to new version 1.28
-
-* Fri May 01 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.27-1mdv2010.0
-+ Revision: 370136
-- update to new version 1.27
-
-* Fri Aug 08 2008 Thierry Vignaud <tvignaud@mandriva.com> 1.26-2mdv2009.0
-+ Revision: 268540
-- rebuild early 2009.0 package (before pixel changes)
-
-* Sat May 31 2008 Guillaume Rousse <guillomovitch@mandriva.org> 1.26-1mdv2009.0
-+ Revision: 213717
-- import perl-Locale-Maketext-Gettext
-
-
-* Sat May 31 2008 Guillaume Rousse <guillomovitch@mandriva.org> 1.26-1mdv2009.0
-- first mdv release
