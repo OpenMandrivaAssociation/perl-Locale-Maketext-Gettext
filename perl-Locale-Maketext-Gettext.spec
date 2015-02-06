@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Release:	6
 Summary:	Joins the gettext and Maketext frameworks
 License:	GPL+ or Artistic
 Group:		Development/Perl
