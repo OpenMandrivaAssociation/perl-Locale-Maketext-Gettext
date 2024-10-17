@@ -7,7 +7,7 @@ Release:	6
 Summary:	Joins the gettext and Maketext frameworks
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Locale/%{upstream_name}-%{upstream_version}.tar.gz
 BuildRequires:	perl(Digest::SHA)
 BuildRequires:	perl-devel
