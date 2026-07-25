@@ -1,14 +1,14 @@
 %define upstream_name    Locale-Maketext-Gettext
-%define upstream_version 1.28
+%define upstream_version 1.32
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	6
+Version:	%{upstream_version}
+Release:	1
 Summary:	Joins the gettext and Maketext frameworks
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Locale/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://github.com/imacat/Locale-Maketext-Gettext
+Source0:	https://cpan.metacpan.org/authors/id/I/IM/IMACAT/Locale-Maketext-Gettext-%{upstream_version}.tar.gz
 BuildRequires:	make
 BuildRequires:	perl(Digest::SHA)
 BuildRequires:	perl-devel
