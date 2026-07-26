@@ -1,14 +1,12 @@
 %define upstream_name    Locale-Maketext-Gettext
-%define upstream_version 1.32
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	1.32
+Release:	2
 Summary:	Joins the gettext and Maketext frameworks
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/imacat/Locale-Maketext-Gettext
-Source0:	https://cpan.metacpan.org/authors/id/I/IM/IMACAT/Locale-Maketext-Gettext-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/I/IM/IMACAT/Locale-Maketext-Gettext-%{version}.tar.gz
 BuildRequires:	make
 BuildRequires:	perl(Digest::SHA)
 BuildRequires:	perl-devel
@@ -30,7 +28,7 @@ Then, build your Maketext localization class, with your base class changed
 from Locale::Maketext/3 to Locale::Maketext::Gettext. That is all.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 rm t/00-signature.t
 
 %build
